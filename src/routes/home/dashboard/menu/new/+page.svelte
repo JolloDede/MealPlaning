@@ -6,10 +6,10 @@
 		ingredients.push('ing');
 	}
 
-    function handleSaveClick() {
-        // TODO: Save
-        // TODO: go back to the menu overview
-    }
+	function handleSaveClick() {
+		// TODO: Save
+		// TODO: go back to the menu overview
+	}
 </script>
 
 {#snippet ele(name: string)}
@@ -41,10 +41,14 @@
 				</div>
 			</div>
 
-            <div>
-                <button onclick={handleSaveClick}>Save</button>
-                <button>Cancel</button>
-            </div>
+			<div class="absolute bottom-0 left-0 w-full">
+				<div class="sticky">
+					<div class="flex justify-end space-x-4 p-1">
+						<button class="rounded-lg bg-blue-500 py-2 px-4 hover:outline" onclick={handleSaveClick}>Save</button>
+						<button class="rounded-lg py-2 px-4 hover:outline">Cancel</button>
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
