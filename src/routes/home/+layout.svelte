@@ -1,9 +1,15 @@
 <script>
+	import { afterNavigate } from '$app/navigation';
 	import Hamburger from '$lib/components/Hamburger.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 
     let isOpen = $state(false);
+
     let { children } = $props();
+
+	afterNavigate(() => {
+		isOpen = false;
+	})	
 </script>
 
 <div class="flex flex-col">

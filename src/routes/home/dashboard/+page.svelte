@@ -4,5 +4,5 @@
 
 <div>
     <a href="/home/dashboard/menu">Menu</a>
-    <a href="diagram">Diagram</a>
+    <!-- <a href="/home/diagram">Diagram</a> -->
 </div>

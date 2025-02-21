@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Hamburger from './Hamburger.svelte';
 	import NavItem from './NavItem.svelte';
 
 	let { isOpen = $bindable() } = $props();
@@ -16,7 +15,7 @@
 
 			<NavItem text="Dashboard" path="/home/dashboard">
 				<ul class="text-xl ml-4">
-					<NavItem path="/home/dashboard/menue" text="Menueübersicht" />
+					<NavItem path="/home/dashboard/menu" text="Menueübersicht" />
 					<NavItem path="/home/dashboard/marco" text="Macro diagramme" />
 				</ul>
 			</NavItem>
