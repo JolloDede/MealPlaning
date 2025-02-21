@@ -1,26 +1,22 @@
 <script lang="ts">
 	import NavItem from './NavItem.svelte';
 
-	let { isOpen = $bindable() } = $props();
+	// let { isOpen = $bindable() } = $props();
 </script>
 
-<div
-	class="absolute left-0 h-full w-4/5 bg-slate-300 transition-all duration-300 {isOpen
-		? ''
-		: '-translate-x-full'}"
->
-	<div class="ml-4 mt-4 mr-2">
-		<ul class="text-2xl space-y-2">
-			<NavItem text="Home" path="/home" />
+<!-- <div class="h-full"> -->
+<div class="ml-4 mr-2 mt-4">
+	<ul class="space-y-2 text-2xl">
+		<NavItem text="Home" path="/home" />
 
-			<NavItem text="Dashboard" path="/home/dashboard">
-				<ul class="text-xl ml-4">
-					<NavItem path="/home/dashboard/menu" text="Menueübersicht" />
-					<NavItem path="/home/dashboard/marco" text="Macro diagramme" />
-				</ul>
-			</NavItem>
+		<NavItem text="Dashboard" path="/home/dashboard">
+			<ul class="ml-4 text-xl">
+				<NavItem path="/home/dashboard/menu" text="Menueübersicht" />
+				<NavItem path="/home/dashboard/marco" text="Macro diagramme" />
+			</ul>
+		</NavItem>
 
-			<NavItem text="Calendar" path="/home/calendar" />
-		</ul>
-	</div>
+		<NavItem text="Calendar" path="/home/calendar" />
+	</ul>
 </div>
+<!-- </div> -->

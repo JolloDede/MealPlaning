@@ -5,7 +5,7 @@
 </script>
 
 <!-- svelte-ignore a11y_consider_explicit_label -->
-<button onclick={() => isOpen = !isOpen}>
+<button onclick={() => isOpen = !isOpen} class="h-1/6">
 	<div class="flex flex-col items-center justify-center">
 		<span class="{itemClass} {isOpen ? 'translate-y-1 rotate-45' : '-translate-y-0.5'}"></span>
 		<span class="{itemClass} {isOpen ? 'opacity-0' : 'opacity-100'}"></span>

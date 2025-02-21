@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { afterNavigate, goto } from '$app/navigation';
+	import { base } from '$app/paths';
+
 	let title = $state('');
 	let ingredients = $state(['Ele', 'Element']);
 
@@ -9,6 +12,11 @@
 	function handleSaveClick() {
 		// TODO: Save
 		// TODO: go back to the menu overview
+		handleExit();
+	}
+
+	function handleExit() {
+		history.back();
 	}
 </script>
 
@@ -44,8 +52,10 @@
 			<div class="absolute bottom-0 left-0 w-full">
 				<div class="sticky">
 					<div class="flex justify-end space-x-4 p-1">
-						<button class="rounded-lg bg-blue-500 py-2 px-4 hover:outline" onclick={handleSaveClick}>Save</button>
-						<button class="rounded-lg py-2 px-4 hover:outline">Cancel</button>
+						<button class="rounded-lg bg-blue-500 px-4 py-2 hover:outline" onclick={handleSaveClick}
+							>Save</button
+						>
+						<button onclick={handleExit} class="rounded-lg px-4 py-2 hover:outline">Cancel</button>
 					</div>
 				</div>
 			</div>
