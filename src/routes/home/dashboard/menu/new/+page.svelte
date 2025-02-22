@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { afterNavigate, goto } from '$app/navigation';
-	import { base } from '$app/paths';
+	import { addMenu } from '../../../../../store.svelte';
+	import { v4 as uuidv4 } from 'uuid';
 
 	let title = $state('');
 	let ingredients = $state(['Ele', 'Element']);
@@ -11,6 +11,7 @@
 
 	function handleSaveClick() {
 		// TODO: Save
+		addMenu({ id: uuidv4(), name: title, ingredients: ingredients });
 		// TODO: go back to the menu overview
 		handleExit();
 	}
