@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Plus from "$lib/components/icons/Plus.svelte";
+
 	let search = '';
 </script>
 
@@ -6,8 +8,8 @@
 	<input class="rounded-lg border" type="text" bind:value={search} />
 </div>
 
-<div class="absolute bottom-0 right-0">
-	<div class="sticky bg-red-500">
-		<a href="/home/dashboard/menu/new">New Menu</a>
+<div class="absolute bottom-6 right-6">
+	<div class="sticky bg-pink-500 w-12 h-12 rounded-xl">
+		<a href="/home/dashboard/menu/new"><Plus /></a>
 	</div>
 </div>
