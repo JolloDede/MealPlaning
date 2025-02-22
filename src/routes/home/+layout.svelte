@@ -1,7 +1,7 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
-	import Hamburger from '$lib/components/Hamburger.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
+	import Hamburger from '$lib/components/base/Hamburger.svelte';
+	import Navbar from '$lib/components/base/Navbar.svelte';
 
 	let isOpen = $state(false);
 

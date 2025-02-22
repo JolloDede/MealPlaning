@@ -1,12 +1,6 @@
 import { writable, type Writable } from "svelte/store";
 
-interface Menu {
-    id: string;
-    name: string;
-    ingredients: string[];
-}
-
-export const menus: Writable<Menu[]> = writable([]);
+export const menus: Writable<Menu[]> = writable([{ id: "", name: "Test Menu", ingredients: ["Banana"] }]);
 
 export function addMenu(newMenu: Menu) {
     menus.update((items) => {
