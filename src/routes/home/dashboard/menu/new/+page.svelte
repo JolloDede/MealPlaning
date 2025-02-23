@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { addMenu } from '../../../../../store.svelte';
+	import { addMenu } from '../../../../../stores/menu.store';
 	import { v4 as uuidv4 } from 'uuid';
 
 	let title = $state('');

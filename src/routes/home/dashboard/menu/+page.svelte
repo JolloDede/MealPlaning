@@ -1,8 +1,7 @@
 <script lang="ts">
-	import Arrow from '$lib/components/icons/Arrow.svelte';
 	import Plus from '$lib/components/icons/Plus.svelte';
-	import Menu from '$lib/components/Menu.svelte';
-	import { menus } from '../../../../store.svelte';
+	import Menu from '$lib/components/custom/Menu.svelte';
+	import { menus } from '../../../../stores/menu.store';
 
 	let search = '';
 </script>

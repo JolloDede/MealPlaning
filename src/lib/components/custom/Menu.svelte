@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Arrow from './icons/Arrow.svelte';
+	import Arrow from '../icons/Arrow.svelte';
 
 	interface Props {
 		menu: Menu;
