@@ -13,7 +13,7 @@
 			<ul class="ml-4 text-xl">
 				<NavItem path="/home/dashboard/plan" text="Pläne" />
 				<NavItem path="/home/dashboard/menu" text="Menus" />
-				<NavItem path="/home/dashboard/marco" text="Macro diagramme" />
+				<!-- <NavItem path="/home/dashboard/marco" text="Macro diagramme" /> -->
 			</ul>
 		</NavItem>
 		<hr>
