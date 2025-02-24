@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { isOpen = $bindable() } = $props();
+	let { isOpen = $bindable(), class: clazz } = $props();
 </script>
 
 {#snippet item(anim: string)}
@@ -7,7 +7,7 @@
 	></span>
 {/snippet}
 
-<button onclick={() => (isOpen = !isOpen)} class="h-1/6">
+<button onclick={() => (isOpen = !isOpen)} class="h-1/6 {clazz}">
 	<div class="flex flex-col items-center justify-center">
 		{@render item(isOpen ? 'translate-y-1 rotate-45' : '-translate-y-0.5')}
 		{@render item(isOpen ? 'opacity-0' : 'opacity-100')}
