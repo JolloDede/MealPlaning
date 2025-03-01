@@ -3,7 +3,7 @@
 	import Hamburger from '$lib/components/base/Hamburger.svelte';
 	import Navbar from '$lib/components/base/Navbar.svelte';
 
-	let isOpen = $state(true);
+	let isOpen = $state(false);
 
 	let { children } = $props();
 

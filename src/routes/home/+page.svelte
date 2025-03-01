@@ -1,21 +1,21 @@
 <script lang="ts">
-	import DateItem from "$lib/components/custom/DateItem.svelte";
-import { onMount } from "svelte";
+	import DateItem from '$lib/components/custom/DateItem.svelte';
+	import { onMount } from 'svelte';
 
-    
-    let days: Date[] = $state([]);
+	let days: Date[] = $state([]);
 
-    onMount(() => {
-        let d = new Date();
-        for (let i = d.getDay(); i < 7; i++) {
-            days.push(new Date(d));
-            d.setDate(d.getDate() + 1);
-        }
-    })
+	onMount(() => {
+		let d = new Date();
+		let day = d.getDay();
+		for (let i = day; i < day + 7; i++) {
+			days.push(new Date(d));
+			d.setDate(d.getDate() + 1);
+		}
+	});
 </script>
 
 <div class="space-y-1 px-2">
-    {#each days as day}
-        <DateItem date={day} />
-    {/each}
+	{#each days as day}
+		<DateItem date={day} />
+	{/each}
 </div>

@@ -44,3 +44,10 @@ export function getMonday(d: Date): Date {
     let diff = d.getDate() - day + (day == 0 ? -6 : 1);
     return new Date(d.setDate(diff))
 }
+
+export function JsonDateToDate(key: string, value: string): Date | string {
+    if (key == "date") {
+        return new Date(value);
+    }
+    return value;
+}
