@@ -48,3 +48,28 @@ export function getCurrentPlans(): Plan[] {
 
     return ps;
 }
+
+export function getPlan(id: string): Plan {
+    let ps: Plan[] = [];
+
+    plans.subscribe((p) => {
+        ps = p.filter((plan) => plan.id == id);
+    });
+
+    if (ps.length > 0) {
+        return ps[0];
+    } else {
+        throw new Error("The Plan list doenst have the requested Plan!");
+    }
+}
+
+export function changeMenu(id: string, newMenuId: string) {
+    plans.update((items) => {
+        return items.map((plan) => {
+            if (plan.id == id) {
+                plan.menu = newMenuId;
+            }
+            return plan;
+        });
+    })
+}
