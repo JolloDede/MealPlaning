@@ -3,16 +3,15 @@
 	import { v4 as uuidv4 } from 'uuid';
 
 	let title = $state('');
-	let ingredients = $state(['Ele', 'Element']);
+	let ingredients: string[] = $state([]);
 
 	function handleNewIng() {
 		ingredients.push('ing');
 	}
 
 	function handleSaveClick() {
-		// TODO: Save
 		addMenu({ id: uuidv4(), name: title, ingredients: ingredients });
-		// TODO: go back to the menu overview
+		
 		handleExit();
 	}
 
