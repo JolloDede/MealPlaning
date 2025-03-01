@@ -31,11 +31,15 @@ export function addMenu(newMenu: Menu) {
 }
 
 export function getMenu(id: string): Menu {
-    let menu: Menu;
+    let ms: Menu[] = [];
 
     menus.subscribe((m) => {
-        menu = m.filter((menu) => menu.id == id)[0];
+        ms = m.filter((menu) => menu.id == id);
     });
 
-    return menu;
+    if (ms.length > 0) {
+        return ms[0];
+    } else {
+        throw new Error("The Menu list doenst have the requested Menu!");
+    }
 }
