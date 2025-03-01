@@ -4,16 +4,3 @@ export enum Time {
     Midday = 1,
     Evening = 2
 }
-
-export interface Menu {
-    id: string;
-    name: string;
-    ingredients: string[];
-}
-
-export interface Plan {
-    id: string;
-    date: Date;
-    time: Time;
-    menu: string; // Menu Id
-}

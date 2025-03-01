@@ -1,5 +1,4 @@
 import { type Writable, writable } from "svelte/store";
-import type { Menu } from "../type";
 import { browser } from "$app/environment";
 import { json } from "@sveltejs/kit";
 import { LOCAL_KEY } from "../consts";

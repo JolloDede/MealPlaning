@@ -1,5 +1,4 @@
 import { writable, type Writable } from "svelte/store";
-import type { Plan } from "../type";
 import { LOCAL_KEY } from "../consts";
 import { browser } from "$app/environment";
 import { JsonDateToDate } from "$lib/utils";
@@ -12,31 +11,40 @@ if (browser) {
     let menustr = localStorage.getItem(PLAN_KEY);
     if (menustr) {
         initialPlans = JSON.parse(menustr, JsonDateToDate);
-        console.log(initialPlans);
     }
 }
 
-export const plan: Writable<Plan[]> = writable(initialPlans);
+export const plans: Writable<Plan[]> = writable(initialPlans);
 
 if (browser) {
-    plan.subscribe((p) => {
+    plans.subscribe((p) => {
         localStorage.setItem(PLAN_KEY, JSON.stringify(p));
     });
 }
 
 export function addPlanEntry(newPlan: Plan) {
-    plan.update((items) => {
+    plans.update((items) => {
         items.push(newPlan);
         return items;
     })
 }
 
 export function getPlanForDate(d: Date): Plan[] {
-    let plans: Plan[] = [];
+    let ps: Plan[] = [];
 
-    plan.subscribe((p) => {
-        plans = p.filter((plan) => plan.date.toDateString() == d.toDateString());
+    plans.subscribe((p) => {
+        ps = p.filter((plan) => plan.date.toDateString() == d.toDateString());
     });
 
-    return plans;
+    return ps;
+}
+
+export function getCurrentPlans(): Plan[] {
+    let ps: Plan[] = [];
+
+    plans.subscribe((pArr) => {
+        ps = pArr.filter((p) => p.date.toDateString() == new Date().toDateString() || p.date.getTime() >= Date.now())
+    });
+
+    return ps;
 }
