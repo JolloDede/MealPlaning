@@ -2,4 +2,10 @@
 
 ## V1
 
-- [ ] test Initial plan load Date
+- [ ] Postiliste
+- [ ] 
+
+### Cleanup
+
+- [ ] only scroll in elements
+- [ ] styling
