@@ -12,7 +12,7 @@
 
 	let { date }: Props = $props();
 
-	let isOpen = $state(false);
+	let isOpen = $state(true);
 
 	let day = getDayDisplay(date);
 	let plans = getPlanForDate(date);

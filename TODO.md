@@ -12,5 +12,5 @@
 
 - [ ] only scroll in elements
 - [ ] styling
-- [ ] home default is open = true
+- [X] home default is open = true
 - [ ] Hide create random in 3 Dots menu
