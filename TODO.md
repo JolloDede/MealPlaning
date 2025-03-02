@@ -4,7 +4,7 @@
 
 - [ ] Postiliste
 - [ ] Calendar view
-    - [ ] Calendar widget
+    - [X] Calendar widget
     - [ ] display the Menu
         - [ ] Menus get a icon
 
