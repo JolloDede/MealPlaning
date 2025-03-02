@@ -5,6 +5,9 @@
 	import { menus } from '../../../../stores/menu.store';
 	import Plan from '$lib/components/custom/Plan.svelte';
 	import type { Time } from '../../../../type';
+	import Dot from '$lib/components/icons/Dot.svelte';
+
+	let isOpen = $state(false);
 
 	function handleClick() {
 		let d = getMonday(new Date());
@@ -24,11 +27,29 @@
 </script>
 
 <div class="mx-auto flex w-4/5 flex-col">
-	<div>
-		<button onclick={handleClick} class="rounded-lg border bg-blue-600 px-4 py-2 hover:bg-blue-500"
-			>Generate Random for a Week</button
-		>
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="mb-2 flex justify-between" onmouseleave={() => (isOpen = false)}>
+		<span></span>
+		<div>
+			<div>
+				<button onclick={() => (isOpen = !isOpen)} class="w-4">
+					<Dot />
+				</button>
+			</div>
+			<div class="absolute right-4 pb-4 px-2 {isOpen ? '' : 'hidden'}">
+				<div class="flex flex-col">
+					<button
+						onclick={handleClick}
+						class="rounded-lg border bg-blue-600 px-4 py-2 hover:bg-blue-500"
+					>
+						Generate Random for a Week
+					</button>
+				</div>
+			</div>
+		</div>
 	</div>
+	<hr />
+
 	<div>
 		{#each getCurrentPlans() as plan}
 			<Plan {plan} />

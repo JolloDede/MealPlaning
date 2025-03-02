@@ -14,4 +14,4 @@
 - [ ] styling
 - [X] home default is open = true
 - [X] Home Arrows display over Navbar
-- [ ] Hide create random in 3 Dots menu
+- [X] Hide create random in 3 Dots menu
