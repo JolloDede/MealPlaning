@@ -24,7 +24,7 @@
 
 		<button
 			onclick={() => (isOpen = !isOpen)}
-			class="w-8 duration-300 {isOpen ? 'rotate-180' : ''}"
+			class="w-8 transition-transform duration-300 {isOpen ? 'rotate-180' : ''}"
 		>
 			<Arrow />
 		</button>

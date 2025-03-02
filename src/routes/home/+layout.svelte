@@ -14,13 +14,16 @@
 
 <div class="h-screen">
 	<div class="ham">
-		<div class="flex flex-row pt-3 px-3">
+		<div class="flex flex-row px-3 pt-3">
 			<!-- svelte-ignore a11y_missing_content -->
 			<h1 class="flex-grow"></h1>
 			<Hamburger class="justify-self-end" bind:isOpen />
 		</div>
 	</div>
 
+	{@render children()}
+
+	<!-- This has to be here else the arrows of the children display over it ! -->
 	<div
 		class="pos absolute left-0 h-5/6 w-full bg-slate-300 transition-all duration-300 {isOpen
 			? ''
@@ -28,11 +31,7 @@
 	>
 		<Navbar />
 	</div>
-	
-	{@render children()}
 </div>
-
-
 
 <style>
 	.pos {
