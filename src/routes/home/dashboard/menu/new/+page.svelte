@@ -5,10 +5,6 @@
 	let title = $state('');
 	let ingredients: string[] = $state([]);
 
-	for (let i = 0; i < 10; i++) {
-		ingredients.push('a');
-	}
-
 	function handleNewIng() {
 		ingredients.push('ing');
 	}
