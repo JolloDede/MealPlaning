@@ -29,6 +29,12 @@ export function addMenu(newMenu: Menu) {
     })
 }
 
+export function deleteMenu(id: string) {
+    menus.update((items) => {
+        return items.filter((item) => item.id != id);
+    })
+}
+
 export function getMenu(id: string): Menu {
     let ms: Menu[] = [];
 

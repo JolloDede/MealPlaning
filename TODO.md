@@ -12,9 +12,9 @@
     - change the range when to buy
 
 - [ ] Menu
-    - [ ] Add
+    - [X] Add
     - [ ] Update
-    - [ ] Delete
+    - [X] Delete
 - [ ] Plan
     - [ ] Generate
     - [ ] Edit
@@ -37,3 +37,4 @@
 - [X] Home Arrows display over Navbar
 - [X] Hide create random in 3 Dots menu
 - [ ] Scroll stay when add element
+- [ ] Enter on Title in new Menu shouldnt add new Ing

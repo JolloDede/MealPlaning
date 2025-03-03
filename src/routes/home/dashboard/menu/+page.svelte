@@ -6,7 +6,7 @@
 	let search = '';
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col pt-2">
 	<!-- <input class="rounded-lg border" type="text" bind:value={search} /> -->
 
 	<div class="flex flex-col px-2">
