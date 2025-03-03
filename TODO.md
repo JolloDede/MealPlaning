@@ -2,11 +2,32 @@
 
 ## V1
 
+### Stories
+
+- A User creates a new Menu.
+- A User whant to eat the menu on the next day
+- A user whants to have a overview of the next week
+- A User whants to have a list of Groceries to buy
+    - He can CRUD the list of Groceries
+    - change the range when to buy
+
+- [ ] Menu
+    - [ ] Add
+    - [ ] Update
+    - [ ] Delete
+- [ ] Plan
+    - [ ] Generate
+    - [ ] Edit
+    - [ ] Remove
+    - [ ] Add
 - [ ] Postiliste
-- [ ] Calendar view
-    - [X] Calendar widget
-    - [ ] display the Menu
-        - [ ] Menus get a icon
+    - [ ] Calendar view
+        - [X] Calendar widget
+        - [ ] display the Menu
+            - [ ] Menus get a icon
+        - [ ] Selector
+    - [ ] Add
+    - [ ] Delete
 
 ### Cleanup
 

@@ -2,8 +2,6 @@
 	let today = new Date();
 	let startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 	let endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-	console.log(startOfMonth);
-	console.log(endOfMonth);
 	let weekStartofMonth = new Date(
 		startOfMonth.setDate(1 + (startOfMonth.getDay() == 0 ? -6 : -startOfMonth.getDay() + 1))
 	);
