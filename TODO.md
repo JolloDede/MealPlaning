@@ -13,7 +13,7 @@
 
 - [ ] Menu
     - [X] Add
-    - [ ] Update
+    - [X] Update
     - [X] Delete
 - [ ] Plan
     - [ ] Generate

@@ -48,3 +48,15 @@ export function getMenu(id: string): Menu {
         throw new Error("The Menu list doenst have the requested Menu!");
     }
 }
+
+export function updateMenu(updatedMenu: Menu) {
+    menus.update((items) => {
+        return items.map((item) => {
+            if (updatedMenu.id == item.id) {
+                item.name = updatedMenu.name;
+                item.ingredients = updatedMenu.ingredients;
+            }
+            return item;
+        })
+    })
+}

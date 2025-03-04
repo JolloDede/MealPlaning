@@ -28,8 +28,8 @@
 		isOpen = false;
 	}
 
-	function handleEditClick() {
-		goto("menu/edit");
+	function handleEditClick(id: string) {
+		goto('menu/edit/' + id);
 	}
 </script>
 
@@ -42,7 +42,8 @@
 			{#if isOpen}
 				<div class="absolute right-4 rounded-lg bg-gray-400">
 					<div class="flex flex-col px-4 py-2">
-						<button onclick={handleEditModeClick} class="rounded-lg px-2 hover:bg-gray-200">Edit</button
+						<button onclick={handleEditModeClick} class="rounded-lg px-2 hover:bg-gray-200"
+							>Edit</button
 						>
 						<hr class="my-1" />
 						<button onclick={handleDeleteClick} class="rounded-lg px-2 hover:bg-gray-200"
@@ -61,16 +62,16 @@
 				<Menu {menu} />
 			{/if}
 			{#if mode == State.Delete}
-				<div class="flex justify-between border rounded-lg py-2 px-4">
+				<div class="flex justify-between rounded-lg border px-4 py-2">
 					<p>{menu.name}</p>
 					<DeleteBtn onclick={() => deleteMenu(menu.id)} />
 				</div>
 			{/if}
 			{#if mode == State.Edit}
-			<div class="flex justify-between border rounded-lg py-2 px-4">
-				<p>{menu.name}</p>
-				<EditBtn onclick={handleEditClick} />
-			</div>
+				<div class="flex justify-between rounded-lg border px-4 py-2">
+					<p>{menu.name}</p>
+					<EditBtn onclick={() => handleEditClick(menu.id)} />
+				</div>
 			{/if}
 		{/each}
 	</div>

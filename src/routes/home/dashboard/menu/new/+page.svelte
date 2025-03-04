@@ -30,10 +30,18 @@
 <div>
 	<div class="mx-auto w-4/5">
 		<form>
+			<!-- So that i captures the Enter in the Input + onclick call on later buttons -->
+			<button class="hidden" type="submit" aria-hidden="true"></button>
 			<div class="pb-20">
 				<label
 					>Title: <br />
-					<input type="text" bind:value={title} class="mt-1 h-10 w-full rounded-lg border p-2" />
+					<!-- svelte-ignore a11y_autofocus -->
+					<input
+						type="text"
+						bind:value={title}
+						autofocus
+						class="mt-1 h-10 w-full rounded-lg border p-2"
+					/>
 				</label>
 
 				<div>
