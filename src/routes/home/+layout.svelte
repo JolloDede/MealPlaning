@@ -19,7 +19,6 @@
 			<h1 class="flex-grow"></h1>
 			<Hamburger class="justify-self-end" bind:isOpen />
 		</div>
-		<hr class="mx-auto w-4/5" />
 	</header>
 
 	<main>

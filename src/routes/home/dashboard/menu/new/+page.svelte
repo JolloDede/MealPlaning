@@ -51,7 +51,7 @@
 				</div>
 			</div>
 
-			<div class="fixed bottom-0 left-0 w-full bg-red-500">
+			<div class="fixed bottom-0 left-0 w-full">
 				<div class="flex justify-end space-x-4 p-1">
 					<button onclick={handleSaveClick} class="rounded-lg bg-blue-500 px-4 py-2 hover:outline"
 						>Save</button
