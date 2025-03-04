@@ -38,3 +38,6 @@
 - [X] Hide create random in 3 Dots menu
 - [ ] Scroll stay when add element
 - [ ] Enter on Title in new Menu shouldnt add new Ing
+- [ ] Ingredient
+    - [ ] Edit
+    - [ ] Delete
