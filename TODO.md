@@ -11,7 +11,9 @@
     - He can CRUD the list of Groceries
     - change the range when to buy
 
-- [ ] Menu
+### Todos
+
+- [X] Menu
     - [X] Add
     - [X] Update
     - [X] Delete
@@ -39,5 +41,23 @@
 - [ ] Scroll stay when add element
 - [ ] Enter on Title in new Menu shouldnt add new Ing
 - [ ] Ingredient
-    - [ ] Edit
-    - [ ] Delete
+  - [ ] Edit
+  - [ ] Delete
+- [ ] Menu Edit style
+
+## V2 (Mobile)
+
+### Stories
+
+- Swipe delete instead of click on btn on card
+- Long press instead of click on btn on card
+
+### Todos
+
+- [ ] Menu
+  - [ ] Delete
+    - [ ] Media visible btn
+    - [ ] Swipe gesture (Svelte Gesture)
+  - [ ] Edit
+    - [ ] Media visible
+    - [ ] Long Press gesture
