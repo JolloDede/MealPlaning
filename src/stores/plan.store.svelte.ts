@@ -1,7 +1,7 @@
 import { writable, type Writable } from "svelte/store";
 import { LOCAL_KEY } from "../consts";
 import { browser } from "$app/environment";
-import { JsonDateToDate } from "$lib/utils";
+import { JsonDateToDate, SameDate } from "$lib/utils";
 
 const PLAN_KEY = LOCAL_KEY + "plans";
 
@@ -24,7 +24,9 @@ if (browser) {
 
 export function addPlanEntry(newPlan: Plan) {
     plans.update((items) => {
-        items.push(newPlan);
+        if (items.findIndex((item) => SameDate(item.date, newPlan.date) && item.time == newPlan.time)) {
+            items.push(newPlan);
+        }
         return items;
     })
 }
@@ -33,7 +35,7 @@ export function getPlanForDate(d: Date): Plan[] {
     let ps: Plan[] = [];
 
     plans.subscribe((p) => {
-        ps = p.filter((plan) => plan.date.toDateString() == d.toDateString());
+        ps = p.filter((plan) => SameDate(plan.date, d));
     });
 
     return ps;
@@ -43,7 +45,7 @@ export function getCurrentPlans(): Plan[] {
     let ps: Plan[] = [];
 
     plans.subscribe((pArr) => {
-        ps = pArr.filter((p) => p.date.toDateString() == new Date().toDateString() || p.date.getTime() >= Date.now())
+        ps = pArr.filter((p) => SameDate(p.date, new Date()) || p.date.getTime() >= Date.now())
     });
 
     return ps;
