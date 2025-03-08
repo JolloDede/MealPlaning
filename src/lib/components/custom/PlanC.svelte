@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { getMenu, menus } from '../../../stores/menu.store';
-	import { changeMenu } from '../../../stores/plan.store.svelte';
+	import { changeMenu, deletePlan } from '../../../stores/plan.store.svelte';
 	import { Time } from '../../../type';
+	import Button from '../base/Button.svelte';
 	import Dot from '../icons/Dot.svelte';
 
 	interface Props {
@@ -11,14 +12,19 @@
 
 	let { plan }: Props = $props();
 
-    let menuId = $state(plan.menu);
+	let menuId = $state(plan.menu);
 	let isOpen = $state(false);
 	let isEdit = $state(false);
 
-    function handleChangeMenu() {
-        isEdit = false;
-        changeMenu(plan.id, menuId);
-    }
+	function handleChangeMenu() {
+		isEdit = false;
+		changeMenu(plan.id, menuId);
+	}
+
+	function handleDeleteClick() {
+		isEdit = false;
+		deletePlan(plan.id);
+	}
 </script>
 
 {#snippet time(time: Time)}
@@ -41,7 +47,7 @@
 
 	<div>
 		{#if isEdit}
-			<select bind:value={menuId} class="py-2 px-2 rounded-lg" onchange={handleChangeMenu}>
+			<select bind:value={menuId} class="rounded-lg px-2 py-2" onchange={handleChangeMenu}>
 				{#each $menus as menu}
 					<option value={menu.id}>{menu.name}</option>
 				{/each}
@@ -52,21 +58,31 @@
 	</div>
 
 	<div class="">
-		<div class="my-auto w-4 rounded-full py-1 hover:bg-gray-200">
-			<button onclick={() => (isOpen = !isOpen)} class="w-4">
+		<div class="my-auto w-4 rounded-full hover:bg-gray-200">
+			<button onclick={() => (isOpen = !isOpen)} class="w-4 py-1">
 				<Dot />
 			</button>
 		</div>
 
 		{#if isOpen}
-			<div class="absolute right-10 -translate-y-7 border bg-red-500 p-2">
-				<button
-					onclick={() => {
-						isEdit = !isEdit;
-						isOpen = !isOpen;
-					}}
-					class="border px-4 py-2">Edit</button
-				>
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<!-- svelte-ignore a11y_mouse_events_have_key_events -->
+			<div
+				onmouseleave={() => {
+					isOpen = false;
+					isEdit = false;
+				}}
+				class="absolute w-28 -translate-x-28 -translate-y-7 border bg-gray-300 p-2"
+			>
+				<div class="flex flex-col space-y-1">
+					<Button
+						onclick={() => {
+							isEdit = !isEdit;
+							isOpen = !isOpen;
+						}}>Edit</Button
+					>
+					<Button onclick={handleDeleteClick}>Remove</Button>
+				</div>
 			</div>
 		{/if}
 	</div>

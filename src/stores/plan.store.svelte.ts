@@ -63,6 +63,13 @@ export function getPlan(id: string): Plan {
     }
 }
 
+
+export function deletePlan(id: string) {
+    plans.update((items) => {
+        return items.filter((item) => item.id != id);
+    })
+}
+
 export function changeMenu(id: string, newMenuId: string) {
     plans.update((items) => {
         return items.map((plan) => {

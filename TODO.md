@@ -19,8 +19,8 @@
     - [X] Delete
 - [ ] Plan
     - [X] Generate
-    - [ ] Edit
-    - [ ] Remove
+    - [X] Edit
+    - [X] Remove
     - [ ] Add
 - [ ] Postiliste
     - [ ] Calendar view
@@ -45,6 +45,8 @@
   - [ ] Delete
 - [ ] Menu Edit style
 - [ ] Navbar display over everything
+- [ ] Plan Edit Menu is searchable
+  - [ ] New Component that has dropdown and search
 
 ## V2 (Mobile)
 
