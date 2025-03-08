@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { getMonday } from '$lib/utils';
 	import { v4 as uuid } from 'uuid';
-	import { addPlanEntry, getCurrentPlans } from '../../../../stores/plan.store.svelte';
+	import { addPlanEntry, getCurrentPlans, plans } from '../../../../stores/plan.store.svelte';
 	import { menus } from '../../../../stores/menu.store';
-	import Plan from '$lib/components/custom/Plan.svelte';
+	import PlanC from '$lib/components/custom/PlanC.svelte';
 	import type { Time } from '../../../../type';
 	import Dot from '$lib/components/icons/Dot.svelte';
 
 	let isOpen = $state(false);
+	let planList: Plan[] = $state([]);
+
+	plans.subscribe((p) => {
+		planList = p;
+	})
 
 	function handleClick() {
 		let d = getMonday(new Date());
@@ -51,8 +56,8 @@
 	<hr />
 
 	<div>
-		{#each getCurrentPlans() as plan}
-			<Plan {plan} />
+		{#each planList as plan}
+			<PlanC {plan} />
 			<hr />
 		{/each}
 	</div>

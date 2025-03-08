@@ -18,7 +18,7 @@
     - [X] Update
     - [X] Delete
 - [ ] Plan
-    - [ ] Generate
+    - [X] Generate
     - [ ] Edit
     - [ ] Remove
     - [ ] Add
@@ -44,6 +44,7 @@
   - [ ] Edit
   - [ ] Delete
 - [ ] Menu Edit style
+- [ ] Navbar display over everything
 
 ## V2 (Mobile)
 
