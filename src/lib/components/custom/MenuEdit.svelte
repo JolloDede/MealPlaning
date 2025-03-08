@@ -25,11 +25,8 @@
 	<hr />
 {/snippet}
 
-<div>
+<div class="mx-auto w-4/5">
 	<form>
-		<!-- So that i captures the Enter in the Input + onclick call on later buttons -->
-		<button class="hidden" type="submit" aria-hidden="true"></button>
-
 		<div class="pb-20">
 			<label
 				>Title: <br />
@@ -50,7 +47,7 @@
 						{@render ele(ing)}
 					{/each}
 
-					<button onclick={handleNewIng} class="w-full rounded-b-xl bg-red-500 hover:bg-red-600">
+					<button onclick={handleNewIng} class="w-full rounded-b-xl bg-red-500 hover:bg-red-600" type="button">
 						Neues Ingredient
 					</button>
 				</div>
@@ -59,10 +56,10 @@
 
 		<div class="fixed bottom-0 left-0 w-full">
 			<div class="flex justify-end space-x-4 p-1">
-				<button onclick={handleSaveClick} class="rounded-lg bg-blue-500 px-4 py-2 hover:outline"
+				<button onclick={handleSaveClick} class="rounded-lg bg-blue-500 px-4 py-2 hover:outline" type="submit"
 					>Save</button
 				>
-				<button onclick={handleCancel} class="rounded-lg px-4 py-2 hover:outline">Cancel</button>
+				<button onclick={handleCancel} class="rounded-lg px-4 py-2 hover:outline" type="reset">Cancel</button>
 			</div>
 		</div>
 	</form>
