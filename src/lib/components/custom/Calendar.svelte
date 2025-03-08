@@ -6,7 +6,7 @@
     let days = GetCalendarMonth(today);
 </script>
 
-<div class="grid grid-cols-7 gap-2 select-none text-right mx-auto w-fit">
+<div id="cal" class="grid grid-cols-7 select-none text-right mx-auto w-fit">
     <p>Mo</p>
     <p>Di</p>
     <p>Mi</p>
@@ -21,3 +21,13 @@
         </CalendarDay>
     {/each}
 </div>
+
+<style>
+    #cal > * {
+        padding: 4px;
+    }
+
+    #cal p {
+        text-align: center;
+    }
+</style>

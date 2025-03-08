@@ -29,6 +29,9 @@
         - [ ] display the Menu
             - [ ] Menus get a icon
         - [ ] Selector
+          - [X] current Week
+          - [ ] Manual selection
+    - [ ] Display Postiliste
     - [ ] Add
     - [ ] Delete
 
