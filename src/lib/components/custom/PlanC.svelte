@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { getMenu, menus } from '../../../stores/menu.store';
-	import { changeMenu, deletePlan } from '../../../stores/plan.store.svelte';
+	import { changeMenu, deleteMenu } from '../../../stores/plan.store.svelte';
 	import { Time } from '../../../type';
 	import Button from '../base/Button.svelte';
 	import Dot from '../icons/Dot.svelte';
@@ -19,11 +19,12 @@
 	function handleChangeMenu() {
 		isEdit = false;
 		changeMenu(plan.id, menuId);
+		menuId = "";
 	}
 
 	function handleDeleteClick() {
 		isEdit = false;
-		deletePlan(plan.id);
+		deleteMenu(plan.id);
 	}
 </script>
 
@@ -36,6 +37,14 @@
 	{/if}
 	{#if time == Time.Evening}
 		<p>Abend</p>
+	{/if}
+{/snippet}
+
+{#snippet menu(id: string)}
+	{#if id}
+		<p>{getMenu(plan.menu).name}</p>
+	{:else}
+		<p class="text-orange-300">Kein Menu ausgewählt</p>
 	{/if}
 {/snippet}
 
@@ -53,7 +62,7 @@
 				{/each}
 			</select>
 		{:else}
-			{getMenu(plan.menu).name}
+			{@render menu(plan.menu)}
 		{/if}
 	</div>
 
@@ -81,7 +90,7 @@
 							isOpen = !isOpen;
 						}}>Edit</Button
 					>
-					<Button onclick={handleDeleteClick}>Remove</Button>
+					<Button onclick={handleDeleteClick}>Remove Menu</Button>
 				</div>
 			</div>
 		{/if}

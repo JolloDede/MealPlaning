@@ -64,9 +64,14 @@ export function getPlan(id: string): Plan {
 }
 
 
-export function deletePlan(id: string) {
+export function deleteMenu(id: string) {
     plans.update((items) => {
-        return items.filter((item) => item.id != id);
+        return items.filter((item) => {
+            if (item.id == id) {
+                item.menu = "";
+            }
+            return item;
+        });
     })
 }
 
