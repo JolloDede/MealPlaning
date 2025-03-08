@@ -19,7 +19,7 @@
 </script>
 
 <div class="flex flex-col pt-2">
-	<div class="flex flex-col px-2">
+	<div class="flex flex-col px-2 space-y-2">
 		{#each $menus as menu}
 			<Menu {menu} />
 		{/each}
