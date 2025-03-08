@@ -23,7 +23,7 @@
     - [X] Remove
     - [ ] Add
       - [ ] Select Calendar plan generate
-      - [ ] block double generation of plan
+      - [X] block double generation of plan
 - [ ] Postiliste
     - [ ] Calendar view
         - [X] Calendar widget

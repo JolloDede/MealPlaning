@@ -24,7 +24,7 @@ if (browser) {
 
 export function addPlanEntry(newPlan: Plan) {
     plans.update((items) => {
-        if (items.findIndex((item) => SameDate(item.date, newPlan.date) && item.time == newPlan.time)) {
+        if (items.findIndex((item) => SameDate(item.date, newPlan.date) && item.time == newPlan.time) < 0) {
             items.push(newPlan);
         }
         return items;

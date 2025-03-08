@@ -8,7 +8,7 @@
 	import Dot from '$lib/components/icons/Dot.svelte';
 	import DotMenu from '$lib/components/custom/DotMenu.svelte';
 
-	let isOpen = $state(true);
+	let isOpen = $state(false);
 	let planList: Plan[] = $state([]);
 
 	plans.subscribe((p) => {
