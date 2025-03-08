@@ -58,3 +58,32 @@ export function SameDate(d1: Date, d2: Date) {
         return false;
     }
 }
+
+export function GetCalendarMonth(day: Date) {
+    let startOfMonth = new Date(day.getFullYear(), day.getMonth(), 1);
+    let endOfMonth = new Date(day.getFullYear(), day.getMonth() + 1, 0);
+    let weekStartofMonth = new Date(
+        startOfMonth.setDate(1 + (startOfMonth.getDay() == 0 ? -6 : -startOfMonth.getDay() + 1))
+    );
+    let weekEndofMonth = new Date(endOfMonth.setDate(endOfMonth.getDate() + 8 - endOfMonth.getDay()));
+
+    let days: Date[] = [];
+
+    while (weekStartofMonth.getTime() < weekEndofMonth.getTime()) {
+        days.push(new Date(weekStartofMonth.getTime()));
+        weekStartofMonth.setDate(weekStartofMonth.getDate() + 1);
+    }
+
+    return days;
+}
+
+export function SameWeek(d1: Date, d2: Date): boolean {
+    if (d1.getFullYear() == d2.getFullYear() && d1.getMonth() == d2.getMonth()) {
+        let add = d1.getDay() == 0 ? 0 : 7 - d1.getDay();
+        let sub = d1.getDay() == 0 ? 6 : d1.getDay() - 1;
+        if (d1.getDate() + add >= d2.getDate() && d1.getDate() - sub <= d2.getDate()) {
+            return true;
+        }
+    }
+    return false;
+}
