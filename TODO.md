@@ -17,12 +17,11 @@
     - [X] Add
     - [X] Update
     - [X] Delete
-- [ ] Plan
+- [X] Plan
     - [X] Generate
     - [X] Edit
     - [X] Remove
-    - [ ] Add
-      - [ ] Select Calendar plan generate
+    - [X] Add
       - [X] block double generation of plan
 - [ ] Postiliste
     - [ ] Calendar view
@@ -66,3 +65,14 @@
   - [ ] Edit
     - [ ] Media visible
     - [ ] Long Press gesture
+
+## V3
+
+### Stories
+
+- Plan further into the future
+
+### Todo
+
+- [ ] Generation of plan view
+  - [ ] Calendar select generation range
