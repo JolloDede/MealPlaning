@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { getMenu, menus } from '../../../stores/menu.store';
 	import { changeMenu, deleteMenu } from '../../../stores/plan.store.svelte';
 	import { Time } from '../../../type';
 	import Button from '../base/Button.svelte';
 	import Dot from '../icons/Dot.svelte';
+	import DotMenu from './DotMenu.svelte';
 
 	interface Props {
 		plan: Plan;
@@ -19,7 +19,7 @@
 	function handleChangeMenu() {
 		isEdit = false;
 		changeMenu(plan.id, menuId);
-		menuId = "";
+		menuId = '';
 	}
 
 	function handleDeleteClick() {
@@ -73,26 +73,14 @@
 			</button>
 		</div>
 
-		{#if isOpen}
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<!-- svelte-ignore a11y_mouse_events_have_key_events -->
-			<div
-				onmouseleave={() => {
-					isOpen = false;
-					isEdit = false;
-				}}
-				class="absolute w-28 -translate-x-28 -translate-y-7 border bg-gray-300 p-2"
+		<DotMenu bind:isOpen>
+			<Button
+				onclick={() => {
+					isEdit = !isEdit;
+					isOpen = !isOpen;
+				}}>Edit</Button
 			>
-				<div class="flex flex-col space-y-1">
-					<Button
-						onclick={() => {
-							isEdit = !isEdit;
-							isOpen = !isOpen;
-						}}>Edit</Button
-					>
-					<Button onclick={handleDeleteClick}>Remove Menu</Button>
-				</div>
-			</div>
-		{/if}
+			<Button onclick={handleDeleteClick}>Remove Menu</Button>
+		</DotMenu>
 	</div>
 </div>

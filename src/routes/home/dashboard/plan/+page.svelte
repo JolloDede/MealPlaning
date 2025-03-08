@@ -1,18 +1,19 @@
 <script lang="ts">
 	import { getMonday } from '$lib/utils';
 	import { v4 as uuid } from 'uuid';
-	import { addPlanEntry, getCurrentPlans, plans } from '../../../../stores/plan.store.svelte';
+	import { addPlanEntry, plans } from '../../../../stores/plan.store.svelte';
 	import { menus } from '../../../../stores/menu.store';
 	import PlanC from '$lib/components/custom/PlanC.svelte';
 	import type { Time } from '../../../../type';
 	import Dot from '$lib/components/icons/Dot.svelte';
+	import DotMenu from '$lib/components/custom/DotMenu.svelte';
 
-	let isOpen = $state(false);
+	let isOpen = $state(true);
 	let planList: Plan[] = $state([]);
 
 	plans.subscribe((p) => {
 		planList = p;
-	})
+	});
 
 	function handleClick() {
 		let d = getMonday(new Date());
@@ -41,16 +42,15 @@
 					<Dot />
 				</button>
 			</div>
-			<div class="absolute right-4 pb-4 px-2 {isOpen ? '' : 'hidden'}">
-				<div class="flex flex-col">
-					<button
-						onclick={handleClick}
-						class="rounded-lg border bg-blue-600 px-4 py-2 hover:bg-blue-500"
-					>
-						Generate Random for a Week
-					</button>
-				</div>
-			</div>
+
+			<DotMenu bind:isOpen>
+				<button
+					onclick={handleClick}
+					class="rounded-lg border bg-blue-600 px-4 py-2 hover:bg-blue-500"
+				>
+					Generate Random for a Week
+				</button>
+			</DotMenu>
 		</div>
 	</div>
 	<hr />
