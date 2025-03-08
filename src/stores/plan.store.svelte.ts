@@ -2,6 +2,7 @@ import { writable, type Writable } from "svelte/store";
 import { LOCAL_KEY } from "../consts";
 import { browser } from "$app/environment";
 import { JsonDateToDate, SameDate } from "$lib/utils";
+import { menus } from "./menu.store";
 
 const PLAN_KEY = LOCAL_KEY + "plans";
 
@@ -86,4 +87,22 @@ export function changeMenu(id: string, newMenuId: string) {
             return plan;
         });
     })
+}
+
+export function GetAllIngredients(startDate: Date, endDate: Date): string[] {
+    let menuIds: string[] = [];
+
+    plans.subscribe((items) => {
+        menuIds = items.filter((item) => item.date.getDate() >= startDate.getDate() && item.date.getDate() <= endDate.getDate()).map((item) => item.menu);
+    });
+
+    let ing: string[] = [];
+
+    menus.subscribe((items) => {
+        menuIds.map((id) => {
+            ing = [...ing, ...items.filter((item) => item.id == id).flatMap((item) => item.ingredients)];
+        })
+    });
+
+    return ing;
 }

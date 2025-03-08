@@ -32,6 +32,8 @@
           - [X] current Week
           - [ ] Manual selection
     - [ ] Display Postiliste
+      - [X] Initial
+      - [ ] checkbox list
     - [ ] Add
     - [ ] Delete
 
