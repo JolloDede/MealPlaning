@@ -12,7 +12,7 @@
 
 <div
 	class="{currentMonth ? '' : 'text-gray-500'}
-    {selected ? 'bg-blue-400' : ''}
+    {selected ? 'bg-fuchsia-400' : ''}
     {selStart ? 'rounded-s-full' : ''}
     {selEnd ? "rounded-e-full" : ""}"
 >
