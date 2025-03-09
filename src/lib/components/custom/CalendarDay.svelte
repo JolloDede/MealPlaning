@@ -13,8 +13,8 @@
 <div
 	class="{currentMonth ? '' : 'text-gray-500'}
     {selected ? 'bg-blue-400' : ''}
-    {selStart ? 'rounded-s-lg' : ''}
-    {selEnd ? "rounded-e-lg" : ""}"
+    {selStart ? 'rounded-s-full' : ''}
+    {selEnd ? "rounded-e-full" : ""}"
 >
 	{@render children()}
 </div>
