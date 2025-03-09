@@ -17,6 +17,7 @@
 
 	function handleClick() {
 		let d = getMonday(new Date());
+		
 		for (let i = 0; i < 7; i++) {
 			for (let j = 0; j < 3; j++) {
 				let menuId = Math.floor(Math.random() * $menus.length);

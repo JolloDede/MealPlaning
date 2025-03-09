@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GetCalendarMonth, SameDate, SameWeek } from '$lib/utils';
+	import { SameWeek } from '$lib/utils';
 	import CalendarDay from './CalendarDay.svelte';
 
 	interface Props {
@@ -25,7 +25,7 @@
 	{#each days as day}
 		<CalendarDay
 			currentMonth={day.getMonth() == today.getMonth()}
-			selected={SameWeek(today, day)}
+			selected={SameWeek(selStartDate, day)}
 			selStart={selStartDate.getDate() == day.getDate()}
 			selEnd={selEndDate.getDate() == day.getDate()}
 		>
