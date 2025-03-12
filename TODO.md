@@ -31,6 +31,7 @@
         - [ ] Selector
           - [X] current Week
           - [ ] Manual selection
+            - [X] Hover day
     - [X] Display Postiliste
       - [X] Initial
       - [X] checkbox list
@@ -53,6 +54,7 @@
 - [ ] Navbar display over everything
 - [ ] Plan Edit Menu is searchable
   - [ ] New Component that has dropdown and search
+- [ ] NAvbar to the side on a Dekstop
 
 ## V2 (Mobile)
 
