@@ -87,3 +87,19 @@ export function SameWeek(d1: Date, d2: Date): boolean {
     }
     return false;
 }
+
+export function GetStartOfWeek(day: Date): Date {
+    return new Date(
+        day.getFullYear(),
+        day.getMonth(),
+        day.getDate() - day.getDay() + 1
+    );
+}
+
+export function GetEndOfWeek(day: Date): Date {
+    return new Date(
+        day.getFullYear(),
+        day.getMonth(),
+        day.getDate() + 7 - day.getDay()
+    );
+}

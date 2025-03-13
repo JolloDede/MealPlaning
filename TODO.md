@@ -28,10 +28,11 @@
         - [X] Calendar widget
         - [ ] display the Menu
             - [ ] Menus get a icon
-        - [ ] Selector
+        - [X] Selector
           - [X] current Week
-          - [ ] Manual selection
+          - [X] Manual selection
             - [X] Hover day
+            - [X] Select week with click
     - [X] Display Postiliste
       - [X] Initial
       - [X] checkbox list
