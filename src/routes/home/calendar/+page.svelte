@@ -13,10 +13,6 @@
 
 	let shoppingList: ShoppingItem[] = $state([]);
 
-	// let ingList = $derived.by(() => {
-	// 	GetAllIngredients(selStartDate, selEndDate);
-	// });
-
 	function handleClick(index: number) {
 		shoppingList = shoppingList.filter((_, idx) => idx != index);
 	}

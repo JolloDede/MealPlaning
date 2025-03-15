@@ -35,7 +35,7 @@
       - [X] Initial
       - [X] checkbox list
     - [ ] Add
-    - [ ] Delete
+    - [X] Delete
 
 ### Cleanup
 
