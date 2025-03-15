@@ -26,8 +26,6 @@
 - [ ] Postiliste
     - [ ] Calendar view
         - [X] Calendar widget
-        - [ ] display the Menu
-            - [ ] Menus get a icon
         - [X] Selector
           - [X] current Week
           - [X] Manual selection
@@ -84,3 +82,6 @@
 
 - [ ] Generation of plan view
   - [ ] Calendar select generation range
+- [ ] Menu
+  - [ ] display the Menu in the calendar
+    - [ ] Menus get a icon
