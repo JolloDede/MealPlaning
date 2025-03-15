@@ -89,20 +89,21 @@ export function changeMenu(id: string, newMenuId: string) {
     })
 }
 
-export function GetAllIngredients(startDate: Date, endDate: Date): string[] {
+export function GetAllIngredients(startDate: Date, endDate: Date): ShoppingItem[] {
     let menuIds: string[] = [];
 
     plans.subscribe((items) => {
         menuIds = items.filter((item) => item.date.getDate() >= startDate.getDate() && item.date.getDate() <= endDate.getDate()).map((item) => item.menu);
     });
 
-    let ing: string[] = [];
+    let shoppinglist: ShoppingItem[] = [];
 
     menus.subscribe((items) => {
         menuIds.map((id) => {
-            ing = [...ing, ...items.filter((item) => item.id == id).flatMap((item) => item.ingredients)];
+            let ing = items.filter((item) => item.id == id).flatMap((item) => item.ingredients);
+            shoppinglist = [...shoppinglist, ...ing.map((item) => ({name: item, isFromMenu: true}))];
         })
     });
 
-    return ing;
+    return shoppinglist;
 }

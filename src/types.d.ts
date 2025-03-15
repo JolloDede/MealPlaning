@@ -10,3 +10,8 @@ interface Plan {
     time: Time;
     menu: string; // Menu Id
 }
+
+interface ShoppingItem {
+    name: string;
+    isFromMenu: boolean;
+}

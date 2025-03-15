@@ -24,7 +24,7 @@
     - [X] Add
       - [X] block double generation of plan
 - [ ] Postiliste
-    - [ ] Calendar view
+    - [X] Calendar view
         - [X] Calendar widget
         - [X] Selector
           - [X] current Week
