@@ -4,6 +4,8 @@
 	import { GetCalendarMonth, GetEndOfWeek, GetStartOfWeek } from '$lib/utils';
 	import { untrack } from 'svelte';
 	import { GetAllIngredients } from '../../../stores/plan.store.svelte';
+	import Button from '$lib/components/base/Button.svelte';
+	import NewShoppingItem from '$lib/components/custom/NewShoppingItem.svelte';
 
 	let today = new Date();
 
@@ -19,15 +21,28 @@
 
 	$effect(() => {
 		let cleanedIng = untrack(() => shoppingList.filter((item) => item.isFromMenu == false));
-		shoppingList = [...cleanedIng,  ...GetAllIngredients(selStartDate, selEndDate)];
-	})
+		shoppingList = [...cleanedIng, ...GetAllIngredients(selStartDate, selEndDate)];
+	});
+
+	let showNewShoppingModal = $state(true);
+
+	function handleNewButtonClick() {
+		showNewShoppingModal = true;
+	}
 </script>
 
 <div class="px-8">
 	<Calendar {days} bind:selStartDate bind:selEndDate />
 
 	<div class="mx-auto w-4/5">
-		<h1 class="text-2xl font-bold">Postiliste</h1>
+		<div class="flex justify-between">
+			<h1 class="text-2xl font-bold">Postiliste</h1>
+			<Button class="bg-blue-500" onclick={handleNewButtonClick}>New</Button>
+			<NewShoppingItem
+				bind:showModal={showNewShoppingModal}
+				addToList={(name) => shoppingList.push({ name: name, isFromMenu: false })}
+			/>
+		</div>
 
 		{#each shoppingList as item, index}
 			<div class="flex justify-between py-2">

@@ -23,7 +23,7 @@
     - [X] Remove
     - [X] Add
       - [X] block double generation of plan
-- [ ] Postiliste
+- [X] Postiliste
     - [X] Calendar view
         - [X] Calendar widget
         - [X] Selector
@@ -34,7 +34,7 @@
     - [X] Display Postiliste
       - [X] Initial
       - [X] checkbox list
-    - [ ] Add
+    - [X] Add
     - [X] Delete
 
 ### Cleanup
