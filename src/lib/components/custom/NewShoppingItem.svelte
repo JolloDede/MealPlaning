@@ -52,7 +52,7 @@
 				</div>
 				<div class="flex justify-end">
 					<Button onclick={handleSaveClick} class="bg-blue-400">Save</Button>
-					<Button>Cancel</Button>
+					<Button onclick={closeDialog}>Cancel</Button>
 				</div>
 			</div>
 		</form>

@@ -24,7 +24,7 @@
 		shoppingList = [...cleanedIng, ...GetAllIngredients(selStartDate, selEndDate)];
 	});
 
-	let showNewShoppingModal = $state(true);
+	let showNewShoppingModal = $state(false);
 
 	function handleNewButtonClick() {
 		showNewShoppingModal = true;
