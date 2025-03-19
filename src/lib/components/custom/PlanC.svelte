@@ -48,7 +48,7 @@
 	{/if}
 {/snippet}
 
-<div class="flex justify-between py-2">
+<div class="flex justify-between">
 	<div>
 		<p>{plan.date.toLocaleDateString()}</p>
 		{@render time(plan.time)}

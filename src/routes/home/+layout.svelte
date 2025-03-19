@@ -13,8 +13,8 @@
 </script>
 
 <div class="flex max-h-screen flex-col">
-	<header class=" ham flex items-center">
-		<div class="flex w-full flex-row px-3 align-middle">
+	<header class="ham flex items-center bg-red-400">
+		<div class="flex w-full flex-row px-3">
 			<!-- svelte-ignore a11y_missing_content -->
 			<h1 class="flex-grow"></h1>
 			<Hamburger class="justify-self-end align-middle" bind:isOpen />
@@ -23,22 +23,24 @@
 
 	<!-- This has to be here else the arrows of the children display over it ! -->
 	<div
-		class="pos absolute left-0 z-50 w-full bg-slate-300 transition-all duration-300 {isOpen
+		class="pos ch absolute left-0 z-50 w-full bg-slate-300 transition-all duration-300 {isOpen
 			? ''
 			: '-translate-x-full'}"
 	>
 		<Navbar />
 	</div>
 
-	<main class="overflow-y-auto mt-2">
+	<main class="ch mt-2 overflow-y-auto bg-blue-400">
 		{@render children()}
 	</main>
 </div>
 
 <style>
+	.ch {
+		height: calc(100vh / 12 * 11);
+	}
 	.pos {
 		top: calc(100vh / 12);
-		height: calc(100vh / 12 * 11);
 	}
 	.ham {
 		height: calc(100vh / 12);
