@@ -46,7 +46,7 @@
 
 ### Cleanup
 
-- [ ] only scroll in elements
+- [X] only scroll in elements
 - [ ] styling
 - [X] home default is open = true
 - [X] Home Arrows display over Navbar
@@ -57,7 +57,7 @@
   - [ ] Edit
   - [ ] Delete
 - [ ] Menu Edit style
-- [ ] Navbar display over everything
+- [X] Navbar display over everything
 - [ ] Plan Edit Menu is searchable
   - [ ] New Component that has dropdown and search
 - [ ] NAvbar to the side on a Dekstop
