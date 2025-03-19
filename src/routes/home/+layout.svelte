@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex max-h-screen flex-col">
-	<header class="ham flex items-center">
+	<header class="ham flex items-center shadow-md">
 		<div class="flex w-full flex-row px-3">
 			<!-- svelte-ignore a11y_missing_content -->
 			<h1 class="flex-grow"></h1>
