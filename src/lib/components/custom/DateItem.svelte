@@ -29,8 +29,11 @@
 			<Arrow />
 		</button>
 	</div>
+
 	<div class="pl-2 {isOpen ? '' : 'hidden'}">
-		<hr class="pb-1">
+		{#if plans.length > 0}
+			<hr class="pb-1" />
+		{/if}
 		{#each plans as plan}
 			<ul>
 				{#if plan.time == Time.Morning}
@@ -40,9 +43,9 @@
 				{:else if plan.time == Time.Evening}
 					<li>Znacht:</li>
 				{/if}
-                <ul class="pl-2">
-                    <li>{getMenu(plan.menu).name}</li>
-                </ul>
+				<ul class="pl-2">
+					<li>{getMenu(plan.menu).name}</li>
+				</ul>
 			</ul>
 		{/each}
 	</div>
