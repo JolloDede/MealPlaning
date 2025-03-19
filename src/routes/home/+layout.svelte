@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex max-h-screen flex-col">
-	<header class="ham flex items-center bg-red-400">
+	<header class="ham flex items-center">
 		<div class="flex w-full flex-row px-3">
 			<!-- svelte-ignore a11y_missing_content -->
 			<h1 class="flex-grow"></h1>
@@ -30,7 +30,7 @@
 		<Navbar />
 	</div>
 
-	<main class="ch mt-2 overflow-y-auto bg-blue-400">
+	<main class="ch mt-2 overflow-y-auto">
 		{@render children()}
 	</main>
 </div>
