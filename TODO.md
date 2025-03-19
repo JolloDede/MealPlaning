@@ -36,6 +36,13 @@
       - [X] checkbox list
     - [X] Add
     - [X] Delete
+- [ ] Database
+  - [ ] Setup Postgres
+    - [ ] PC
+    - [ ] Create tables
+  - [ ] Sync
+    - [ ] Menus
+    - [ ] Plans
 
 ### Cleanup
 
