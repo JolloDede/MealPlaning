@@ -8,7 +8,7 @@
 	let { children } = $props();
 
 	afterNavigate(() => {
-		// isOpen = false;
+		isOpen = false;
 	});
 </script>
 
