@@ -51,7 +51,7 @@
 
 					<button
 						onclick={handleNewIng}
-						class="w-full rounded-b-xl bg-red-500 hover:bg-red-600"
+						class="w-full rounded-b-xl bg-red-500 hover:bg-red-600 py-2"
 						type="button"
 					>
 						Neues Ingredient

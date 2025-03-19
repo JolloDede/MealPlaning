@@ -17,6 +17,9 @@
     - [X] Add
     - [X] Update
     - [X] Delete
+   - [ ] Ingredient
+    - [ ] Edit
+    - [ ] Delete
 - [X] Plan
     - [X] Generate
     - [X] Edit
@@ -53,9 +56,6 @@
 - [X] Hide create random in 3 Dots menu
 - [ ] Scroll stay when add element
 - [ ] Enter on Title in new Menu shouldnt add new Ing
-- [ ] Ingredient
-  - [ ] Edit
-  - [ ] Delete
 - [ ] Menu Edit style
 - [X] Navbar display over everything
 - [ ] Plan Edit Menu is searchable
