@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { MouseEventHandler } from 'svelte/elements';
 	import DeleteBtn from './DeleteBtn.svelte';
+	import Ingredient from './Ingredient.svelte';
 
 	interface Props {
 		title: string;
@@ -23,14 +24,6 @@
 	}
 </script>
 
-{#snippet ele(index: number, name: string)}
-	<div class="flex justify-between px-4 py-2">
-		<p>{name}</p>
-		<span><DeleteBtn onclick={() => handleIngRemove(index)} /></span>
-	</div>
-	<hr />
-{/snippet}
-
 <div class="mx-auto w-4/5">
 	<form>
 		<div class="pb-20">
@@ -51,8 +44,8 @@
 				<h1>Zutaten:</h1>
 
 				<div class="rounded-xl border">
-					{#each ingredients as ing, index}
-						{@render ele(index, ing)}
+					{#each ingredients as _, index}
+						<Ingredient {index} bind:name={ingredients[index]} handleIngRemove={handleIngRemove} />
 					{/each}
 
 					<button

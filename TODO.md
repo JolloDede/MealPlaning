@@ -17,8 +17,8 @@
     - [X] Add
     - [X] Update
     - [X] Delete
-   - [ ] Ingredient
-    - [ ] Edit
+   - [X] Ingredient
+    - [X] Edit
     - [X] Delete
 - [X] Plan
     - [X] Generate
@@ -61,6 +61,7 @@
 - [ ] Plan Edit Menu is searchable
   - [ ] New Component that has dropdown and search
 - [ ] NAvbar to the side on a Dekstop
+- [ ] Mark the whole text in ingredients when editing
 
 ## V2 (Mobile)
 
