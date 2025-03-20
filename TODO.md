@@ -19,7 +19,7 @@
     - [X] Delete
    - [ ] Ingredient
     - [ ] Edit
-    - [ ] Delete
+    - [X] Delete
 - [X] Plan
     - [X] Generate
     - [X] Edit

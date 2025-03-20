@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { MouseEventHandler } from 'svelte/elements';
+	import DeleteBtn from './DeleteBtn.svelte';
 
 	interface Props {
 		title: string;
@@ -16,11 +17,16 @@
 	function handleCancel() {
 		history.back();
 	}
+
+	function handleIngRemove(index: number) {
+		ingredients = ingredients.filter((ing, idx) => index != idx);
+	}
 </script>
 
-{#snippet ele(name: string)}
-	<div class="px-4 py-2">
-		{name}
+{#snippet ele(index: number, name: string)}
+	<div class="flex justify-between px-4 py-2">
+		<p>{name}</p>
+		<span><DeleteBtn onclick={() => handleIngRemove(index)} /></span>
 	</div>
 	<hr />
 {/snippet}
@@ -45,8 +51,8 @@
 				<h1>Zutaten:</h1>
 
 				<div class="rounded-xl border">
-					{#each ingredients as ing}
-						{@render ele(ing)}
+					{#each ingredients as ing, index}
+						{@render ele(index, ing)}
 					{/each}
 
 					<button
